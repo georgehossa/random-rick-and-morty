@@ -5,7 +5,6 @@ import Image from '../../components/Image';
 import StarRating from '../../components/StarRating';
 
 
-
 const App = () => {
   const [character, setCharacter] = useState();
   const randomNumberInRange = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -27,6 +26,7 @@ const App = () => {
 
   useEffect(() => {
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return(
@@ -35,6 +35,7 @@ const App = () => {
         <InfoWrapper>
           <Name>{character?.name}</Name>
           <StarRating />
+
           <Button onClick={handleClick}>Next</Button>
         </InfoWrapper>
         <Image source={character?.image} alt={character?.name}/>
